@@ -20,6 +20,28 @@
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
+      {{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ if $featured}}
+        {{ $image := $featured }}
+
+        {{ $width := "600"}}
+        {{ $image = $featured.Resize ( printf "%sx" $width ) }}
+
+        <figure class="figure title">
+        {{ if le (int $featured.Width) (int $width) }}
+        <img src="{{ $featured.RelPermalink }}" {{ with .Params.featured_image.caption }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+        {{ else }}
+        <a href="{{ $featured.RelPermalink }}" target="_blank" {{ with .Params.featured_image.caption }}title="{{.}}"{{ end }}>
+        	<img src="{{ $image.RelPermalink }}" {{ with .Params.featured_image.caption }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+        </a>
+        {{ end }}
+          {{ with .Params.featured_image.caption }}
+          <figcaption>
+          <p class="text-muted">{{ . }}</p>
+          </figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
       {{ .Content }}
     </div>
     {{- with .Site.Params.enablePostCopyright }}

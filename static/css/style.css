@@ -18,6 +18,80 @@
  * bootstrap
  */
 
+figure {
+  width: fit-content;
+  /* border-top: 1px solid #aaa; */
+}
+
+figure figcaption {
+  border-top: 1px solid #aaa;
+  padding: 0px 5px;
+}
+
+figure img {
+  padding: 5px 0px;
+}
+
+.figure.two {
+  max-width: 512px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.figure.two img {
+  width: 90%;
+}
+
+.figure.two figcaption {
+  grid-column: 1/-1;
+}
+
+.featured-image-wrapper {
+  position: relative;
+  float: left;
+  padding: 0px 25px 0px 0px;
+  /*width: 300px;*/
+}
+
+.featured-image-wrapper img {
+  width: 350px;
+}
+
+.article-header-caption {
+  font-size: 14px;
+}
+
+
+@media (max-width: 559px) {
+  .featured-image-wrapper {
+    position: relative;
+    float: none;
+  }
+
+  .featured-image-wrapper img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .featured-image-wrapper {
+    position: relative;
+    float: none;
+  }
+
+  .featured-image-wrapper img {
+    width: 75%;
+  }
+}
+
+article:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -39,8 +113,8 @@ body {
 article,
 aside,
 details,
-figcaption,
-figure,
+/*figcaption,*/
+/*figure,*/
 footer,
 header,
 hgroup,
@@ -536,6 +610,10 @@ mark,
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.article-summary {
+  font-size: medium;
 }
 
 .text-muted {
@@ -3260,8 +3338,8 @@ body {
   padding-right: 0 !important;
   font-family: "PingHei", "PingFang SC", Helvetica Neue, "Work Sans",
     "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
-  font-size: 14px;
-  line-height: 1.57143;
+  font-size: 16px;
+  line-height: 1.57143; /*1.57143; 1.375;*/
   color: #333333;
   background-color: #fff;
 }
@@ -6001,6 +6079,7 @@ body.no-sidebar .sidebar {
 }
 
 .main .article-list article {
+  padding-bottom: 5px;
   border-bottom: 1px solid #f2f2f2;
 }
 
@@ -6009,7 +6088,7 @@ body.no-sidebar .sidebar {
 }
 
 .main .article-meta {
-  font-size: 13px;
+  font-size: 14px;
   color: #999;
 }
 
@@ -6528,7 +6607,7 @@ body.no-sidebar .sidebar {
 }
 
 .article-list .article-title {
-  font-size: 18px;
+  font-size: 26px;
 }
 
 .article-toc .toc-title {
@@ -7996,6 +8075,10 @@ body.okayNav-loaded {
     padding-left: 20px;
   }
 
+  .content {
+    
+  }
+
   .footer {
     position: fixed;
     left: 0;
@@ -8296,6 +8379,10 @@ body.okayNav-loaded {
     width: 58.33333%;
     padding-right: 25px;
     padding-left: 25px;
+  }
+
+  .content {
+    width: 90%;
   }
 
   .footer {
@@ -8647,6 +8734,10 @@ body.okayNav-loaded {
     padding-left: 30px;
   }
 
+  .content:not(.article-list) {
+    width: 80%;
+  }
+
   .footer {
     width: 16.66667%;
   }
@@ -8700,6 +8791,10 @@ body.okayNav-loaded {
 
   .main {
     width: 62.33333%;
+  }
+
+  .content:not(.article-list) {
+    width: 75%;
   }
 
   .footer {
@@ -9168,6 +9263,7 @@ body.okayNav-loaded {
   }
 }
 
+/* Only right sidebar */
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm {
     display: block !important;

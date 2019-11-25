@@ -14,8 +14,22 @@
         {{ partial "post/title.html" . -}}
         {{- .Scratch.Delete "class_name"}}
       </div>
+      {{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ $thumb := (.Resources.ByType "image").GetMatch "*thumb*" }}
+	  {{ if $thumb }}
+        {{ $featured = $thumb }}
+      {{ end }}
+
+      {{ if and $featured (.Params.featured_image.show_thumb)}}
+        {{ $image := $featured }}
+        {{ $image = $featured.Resize "600x" }}
+        <div class="featured-image-wrapper mt-4 mb-4"> {{/* style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;" */}}
+          <a href="{{- .RelPermalink }}"><img src="{{ $image.RelPermalink }}" alt="" class="featured-image"></a>
+          {{ with .Params.featured_image.caption }}<div class="article-header-caption text-muted">{{ . }}</div>{{ end }}
+        </div>
+      {{ end }}
       {{- if .Summary }}
-      <div class="article-entry text-muted" itemprop="description">
+      <div class="article-entry article-summary text-muted" itemprop="description">
         {{- .Summary -}}
       </div>
       {{- end }}

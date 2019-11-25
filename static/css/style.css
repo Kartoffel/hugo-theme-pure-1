@@ -396,6 +396,7 @@ img {
 
 .img-circle {
   border-radius: 50%;
+  background: rgba(255, 85, 83, 0.38);
 }
 
 hr {
@@ -4303,22 +4304,23 @@ img.img-gray:hover,
 
 img.img-rotate,
 .img-rotate img {
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  transition: background 0.3s ease, background 0.3s ease;
 }
 
 img.img-rotate:hover,
 .img-rotate:hover img {
-  transform: rotate(360deg);
+  background: rgba(255, 85, 83, 0.9);
+/*transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   /* IE 9 */
   -moz-transform: rotate(360deg);
   /* Firefox */
   -webkit-transform: rotate(360deg);
   /* Safari and Chrome */
-  -o-transform: rotate(360deg);
+  -o-transform: rotate(360deg); */
 }
 
 /*img-burn*/

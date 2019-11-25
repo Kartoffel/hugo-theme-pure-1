@@ -617,7 +617,7 @@ mark,
 }
 
 .text-muted {
-  color: #777777 !important;
+  color: #333333 !important;
 }
 
 .text-primary {
@@ -5905,7 +5905,7 @@ body.no-sidebar .sidebar {
 }
 
 .main-nav > li > a {
-  color: #555555;
+  color: #333333;
 }
 
 .main-nav > li .menu-title {
@@ -5915,7 +5915,7 @@ body.no-sidebar .sidebar {
 .main-nav > .active a,
 .main-nav > .active a:hover,
 .main-nav > .active a:focus {
-  color: #333333;
+  color: #000;
   background: #f4f4f4;
 }
 
@@ -6089,11 +6089,11 @@ body.no-sidebar .sidebar {
 
 .main .article-meta {
   font-size: 14px;
-  color: #999;
+  color: #666;
 }
 
 .main .article-meta a {
-  color: #999;
+  color: #666;
 }
 
 .main .article-meta a:hover {

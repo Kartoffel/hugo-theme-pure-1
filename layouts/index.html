@@ -25,7 +25,6 @@
         {{ $image = $featured.Resize "600x" }}
         <div class="featured-image-wrapper mt-4 mb-4"> {{/* style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;" */}}
           <a href="{{- .RelPermalink }}"><img src="{{ $image.RelPermalink }}" alt="" class="featured-image"></a>
-          {{ with .Params.featured_image.caption }}<div class="article-header-caption text-muted">{{ . }}</div>{{ end }}
         </div>
       {{ end }}
       {{- if .Summary }}

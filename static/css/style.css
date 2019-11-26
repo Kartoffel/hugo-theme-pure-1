@@ -15,7 +15,7 @@
 /* Mixins */
 
 /**
- * bootstrap
+ * Custom CSS
  */
 
 figure {
@@ -51,7 +51,6 @@ figure img {
   position: relative;
   float: left;
   padding: 0px 25px 0px 0px;
-  /*width: 300px;*/
 }
 
 .featured-image-wrapper img {
@@ -63,6 +62,21 @@ figure img {
 }
 
 
+article:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.article-summary {
+  font-size: medium;
+}
+
+/**
+ * Custom Media Queries
+ */
+
+
 @media (max-width: 559px) {
   .featured-image-wrapper {
     position: relative;
@@ -71,6 +85,13 @@ figure img {
 
   .featured-image-wrapper img {
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .content {
+    
   }
 }
 
@@ -85,10 +106,22 @@ figure img {
   }
 }
 
-article:after {
-  display: block;
-  clear: both;
-  content: "";
+@media (min-width: 992px) {
+  .content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content:not(.article-list) {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content:not(.article-list) {
+    width: 75%;
+  }
 }
 
 
@@ -611,10 +644,6 @@ mark,
 
 .text-capitalize {
   text-transform: capitalize;
-}
-
-.article-summary {
-  font-size: medium;
 }
 
 .text-muted {
@@ -7590,6 +7619,7 @@ body.okayNav-loaded {
 }
 
 @media (min-width: 768px) {
+
   .lead {
     font-size: 21px;
   }
@@ -8077,10 +8107,6 @@ body.okayNav-loaded {
     padding-left: 20px;
   }
 
-  .content {
-    
-  }
-
   .footer {
     position: fixed;
     left: 0;
@@ -8137,6 +8163,7 @@ body.okayNav-loaded {
 }
 
 @media (min-width: 992px) {
+
   .container {
     width: 970px;
   }
@@ -8383,10 +8410,6 @@ body.okayNav-loaded {
     padding-left: 25px;
   }
 
-  .content {
-    width: 90%;
-  }
-
   .footer {
     width: 16.66667%;
   }
@@ -8461,6 +8484,7 @@ body.okayNav-loaded {
 }
 
 @media (min-width: 1200px) {
+
   .container {
     width: 1170px;
   }
@@ -8736,10 +8760,6 @@ body.okayNav-loaded {
     padding-left: 30px;
   }
 
-  .content:not(.article-list) {
-    width: 80%;
-  }
-
   .footer {
     width: 16.66667%;
   }
@@ -8794,11 +8814,6 @@ body.okayNav-loaded {
   .main {
     width: 62.33333%;
   }
-
-  .content:not(.article-list) {
-    width: 75%;
-  }
-
   .footer {
     width: 16.66667%;
   }

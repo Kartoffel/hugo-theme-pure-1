@@ -50,7 +50,7 @@ figure img {
 .featured-image-wrapper {
   position: relative;
   float: left;
-  padding: 0px 25px 0px 0px;
+  padding: 10px 25px 10px 0px;
 }
 
 .featured-image-wrapper img {
@@ -59,6 +59,14 @@ figure img {
 
 .article-header-caption {
   font-size: 14px;
+}
+
+.article-header.with-image {
+  padding-top: 5px;
+}
+
+.main .article-list article {
+  margin-bottom: 5px;
 }
 
 .article-summary strong {
@@ -78,7 +86,7 @@ article:after {
 
 .article-summary {
   font-size: medium;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 
@@ -9547,6 +9555,18 @@ body.okayNav-loaded {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .article-header.with-image {
+    padding-top: 0px;
+  }
+
+  .article-header {
+    margin-bottom: 10px;
+  }
+
+  .article-meta {
+    padding-top: 10px;
+  }
 }
 
 /* Only one sidebar */
@@ -9582,7 +9602,7 @@ body.okayNav-loaded {
     width: 75%;
   }
   .featured-image-wrapper {
-    width: 35%;
+    width: 37.5%;
   }
 }
 

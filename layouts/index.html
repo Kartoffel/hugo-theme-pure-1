@@ -17,8 +17,8 @@
 
       {{ if and $featured (.Params.featured_image.show_thumb)}}
         {{ $image := $featured }}
-        {{ $image = $featured.Resize "600x" }}
-        <div class="featured-image-wrapper mt-4 mb-4"> {{/* style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;" */}}
+        {{ $image = $featured.Resize "500x" }}
+        <div class="featured-image-wrapper mt-4 mb-4"> 
           <a href="{{- .RelPermalink }}"><img src="{{ $image.RelPermalink }}" alt="" class="featured-image"></a>
         </div>
       {{ end }}

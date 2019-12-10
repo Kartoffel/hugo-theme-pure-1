@@ -9516,13 +9516,18 @@ body.okayNav-loaded {
  * Custom Media Queries
  */
 
-
 @media (max-width: 559px) {
   .featured-image-wrapper {
     position: relative;
     float: none;
   }
 
+  .featured-image-wrapper img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 350px) {
   .featured-image-wrapper img {
     width: 100%;
   }
@@ -9566,6 +9571,10 @@ body.okayNav-loaded {
 
   .article-meta {
     padding-top: 10px;
+  }
+
+  .main .article-list article {
+	margin-bottom: 25px;
   }
 }
 

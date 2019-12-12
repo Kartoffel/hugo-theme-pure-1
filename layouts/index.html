@@ -23,9 +23,7 @@
         </div>
       {{ end }}
       <div class="article-header{{ if and $featured (.Params.featured_image.show_thumb) }} with-image{{ end }}">
-        {{- .Scratch.Set "class_name" "article-title" }}
         {{ partial "post/title.html" . -}}
-        {{- .Scratch.Delete "class_name"}}
       </div>
       {{- if .Summary }}
       <div class="article-entry article-summary text-muted" itemprop="description">

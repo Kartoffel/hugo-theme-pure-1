@@ -107,6 +107,10 @@ figcaption p {
   margin: 3px 0;
 }
 
+a.article-title {
+  font-weight: bold;
+}
+
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -463,10 +467,6 @@ h6,
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
-}
-
-h1 .article-title {
-  font-weight: bold;
 }
 
 h1 small,

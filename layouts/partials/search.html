@@ -1,4 +1,5 @@
-<div class="search" id="search-form-wrap">
+<div class="search" id="search-form-wrap" {{- if not .Site.Params.search.enable }} style="margin-bottom: 15px;" {{- end }}>
+	{{- if .Site.Params.search.enable }} 
     <form class="search-form sidebar-form">
         <div class="input-group">
             <input type="text" class="search-form-input form-control" placeholder="{{ T "widget_search" }}" />
@@ -22,4 +23,5 @@
             </div>
         </div>
     </form>
+	{{- end }}
 </div>

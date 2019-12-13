@@ -6,7 +6,7 @@
     <title>
       {{- block "title" . -}}
       {{ if .IsPage }}
-        {{ .Title }} - {{ .Site.Title }}
+        {{ .Title }} {{/* {{ .Site.Title }} - {{ .Title }} */}}
       {{ else}}
         {{ .Site.Title}}{{ end }}
       {{- end -}}

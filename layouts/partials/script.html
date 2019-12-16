@@ -1,8 +1,9 @@
-{{- if or (.Site.Params.search.enable) (.Site.Params.highlight.enable) }} 
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
+<script type="text/javascript" src="{{ "js/plugin.js" | absURL }}"></script>
+{{- if or (.Site.Params.search.enable) (.Site.Params.highlight.enable) }} 
 <script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js"></script>
 <script type="text/javascript"
@@ -16,7 +17,7 @@ hljs.configure({
 hljs.initHighlightingOnLoad();
 </script>
 <script type="text/javascript" src="{{ "js/application.js" | absURL }}"></script>
-<script type="text/javascript" src="{{ "js/plugin.js" | absURL }}"></script>
+
 {{- if .Site.Params.search.enable }} 
 <script>
       (function (window) {

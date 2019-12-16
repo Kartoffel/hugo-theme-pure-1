@@ -2,7 +2,6 @@
 <script>
    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-<script type="text/javascript" src="{{ "js/plugin.js" | absURL }}"></script>
 {{- if or (.Site.Params.search.enable) (.Site.Params.highlight.enable) }} 
 <script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js"></script>
@@ -17,7 +16,9 @@ hljs.configure({
 hljs.initHighlightingOnLoad();
 </script>
 <script type="text/javascript" src="{{ "js/application.js" | absURL }}"></script>
-
+{{- end }}
+<script type="text/javascript" src="{{ "js/plugin.js" | absURL }}"></script>
+{{- if or (.Site.Params.search.enable) (.Site.Params.highlight.enable) }} 
 {{- if .Site.Params.search.enable }} 
 <script>
       (function (window) {

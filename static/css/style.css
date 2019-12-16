@@ -55,6 +55,7 @@ figure img {
 }
 
 .featured-image-wrapper img {
+  border-radius: 4px;
   width: 350px;
 }
 

@@ -21,7 +21,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       {{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
-      {{ if $featured}}
+      {{ if and ($featured) (not .Params.featured_image.hide_featured)}}
         {{ $image := $featured }}
 
         {{ $width := "600"}}

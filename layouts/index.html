@@ -16,10 +16,11 @@
       {{ end }}
 
       {{ if and $featured (.Params.featured_image.show_thumb)}}
-        {{ $image := $featured }}
-        {{ $image = $featured.Resize "500x" }}
+        {{ $image_lg := $featured.Resize "800x" }}
+        {{ $image := $featured.Resize "500x" }}
+        {{ $image_sm := $featured.Resize "320x" }}
         <div class="featured-image-wrapper mt-4 mb-4"> 
-          <a href="{{- .RelPermalink }}"><img src="{{ $image.RelPermalink }}" alt="" class="featured-image"></a>
+          <a href="{{- .RelPermalink }}"><img sizes="(max-width: 350px) 320px, 500px" srcset="{{ if ge $featured.Width "800" }}{{ $image_lg.RelPermalink }} 800w, {{ end }}{{ $image.RelPermalink }} 500w, {{ $image_sm.RelPermalink }} 320w" src="{{ $image.RelPermalink }}" alt="" class="featured-image"></a>
         </div>
       {{ end }}
       <div class="article-header{{ if and $featured (.Params.featured_image.show_thumb) }} with-image{{ end }}">

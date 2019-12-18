@@ -26,15 +26,20 @@
 
         {{ $width := "600"}}
         {{ $image = $featured.Resize ( printf "%sx" $width ) }}
+        {{ $image_lg := $featured.Resize "800x" }}
+        {{ $image_sm := $featured.Resize "320x" }}
 
         <figure class="figure title">
-        {{ if le (int $featured.Width) (int $width) }}
-        <img src="{{ $featured.RelPermalink }}" {{ with .Params.featured_image.caption }}alt="{{.}}"{{ else }}alt=""{{ end }}>
-        {{ else }}
-        <a href="{{ $featured.RelPermalink }}" target="_blank" {{ with .Params.featured_image.caption }}title="{{.}}"{{ end }}>
-        	<img src="{{ $image.RelPermalink }}" {{ with .Params.featured_image.caption }}alt="{{.}}"{{ else }}alt=""{{ end }}>
-        </a>
-        {{ end }}
+        {{ if gt $featured.Width $width }}<a href="{{ $featured.RelPermalink }}" target="_blank" {{ with .Params.featured_image.caption }}title="{{.}}"{{ end }}>{{ end }}
+        	<img sizes="(max-width: 350px) 320px, 600px" 
+                srcset="
+                {{ if gt $featured.Width "320" }} {{ with $image_sm.RelPermalink }}{{.}} 320w{{ end }} {{ end }}
+                {{ with $featured.RelPermalink }}, {{.}} {{ $featured.Width }}w{{ end }}
+                {{ if gt $featured.Width $width }} {{ with $image.RelPermalink }}, {{.}} {{ $width }}w{{ end }} {{ end }}
+                {{ if gt $featured.Width "800" }} {{ with $image_lg.RelPermalink }}, {{.}} 800w{{ end }} {{ end }}
+                "
+                src="{{ if gt $featured.Width $width }}{{ $image.RelPermalink }}{{ else }}{{ $featured.RelPermalink }}{{ end}}" {{ with .Params.featured_image.caption }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+        {{ if gt $featured.Width $width }}</a>{{ end }}
           {{ with .Params.featured_image.caption }}
           <figcaption>
           <p class="text-muted">{{ . }}</p>

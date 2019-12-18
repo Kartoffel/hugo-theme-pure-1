@@ -29,8 +29,17 @@ figure figcaption {
   padding: 0px 5px;
 }
 
-figure img {
+figure img, figure video {
   padding: 5px 0px;
+}
+
+figure video {
+  max-width: 100%;
+}
+
+.figure.title img, .figure.title video {
+  max-width: 100%;
+  height: auto;
 }
 
 .figure.two {

@@ -3,6 +3,7 @@
     itemtype="http://schema.org/BlogPosting">
     <!-- TODO gallary -->
     {{- partial "post/gallery" .}}
+    {{- if not (eq .Title "About") }}
     <div class="article-header">
       {{- if or (.Permalink) (.Title)}}
       {{ .Scratch.Set "class_name" "article-title" }}
@@ -19,6 +20,7 @@
         {{- partial "post/wc.html" . }}
       </div>
     </div>
+    {{- end }}
     <div class="article-entry marked-body" itemprop="articleBody">
       {{ $featured := (.Resources.ByType "image").GetMatch "*featured*" }}
       {{ if and ($featured) (not .Params.featured_image.hide_featured)}}

@@ -18,6 +18,10 @@
  * Custom CSS
  */
 
+.content:not(.article-list) {
+  /*max-width: 600px;*/
+}
+
 figure {
   width: fit-content;
   margin: 1em 0px;
@@ -35,6 +39,14 @@ figure img, figure video {
 
 figure video {
   max-width: 100%;
+}
+
+.figure.title {
+}
+
+.figure.title img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .figure.title img, .figure.title video {
@@ -55,6 +67,22 @@ figure video {
 
 .figure.two figcaption {
   grid-column: 1/-1;
+}
+
+
+.figure.figure-right {
+  float: right;
+  width: 40%;
+  max-width: 300px;
+  /* margin-right: -33%; */
+  margin: 0px;
+  margin-top: -5px;
+  padding: 0px 10px;
+  /*overflow: auto;*/
+}
+
+.figure.figure-right img {
+  width: 100%;
 }
 
 .featured-image-wrapper {
@@ -119,6 +147,47 @@ figcaption p {
 
 a.article-title {
   font-weight: bold;
+}
+
+table.authortable {
+  border: none;
+  table-layout: auto;
+  width: fit-content;
+}
+.authortable tr {
+  background: transparent !important;
+}
+.authortable td {
+  border: none;
+  padding: 10px 13px;
+}
+.authortable a, .authortable a:hover, .authortable a:focus, .authortable a:active {
+  color: inherit !important;
+}
+
+.author-activity {
+
+}
+.author-location {
+  font-style: italic;
+  color: #666;
+}
+
+.authorlinks{
+  margin-left: 13px !important;
+}
+
+.authorlinks li {
+  list-style-type: none;
+  padding-bottom: 5px;
+}
+
+.authorlinks a {
+  color: #333 !important;
+}
+
+.authorlinks li i {
+  padding-right: 8px;
 }
 
 
@@ -9561,6 +9630,17 @@ body.okayNav-loaded {
 
 @media (max-width: 350px) {
   .featured-image-wrapper img {
+    width: 100%;
+  }
+  .figure.figure-right {
+    float: none;
+    padding: 10px;
+    margin: 1em 0px;
+    margin-top: 0px;
+    width: fit-content;
+  }
+
+  .figure.figure-right img {
     width: 100%;
   }
 }

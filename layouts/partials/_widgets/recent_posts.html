@@ -11,7 +11,7 @@
                         <a href="{{- .Permalink }}" class="title">{{ .Title }}</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="{{ .Date }}" itemprop="datePublished">{{- .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</time>
+                        <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{- .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</time>
                     </p>
                 </div>
             </li>

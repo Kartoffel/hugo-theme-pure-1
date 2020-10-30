@@ -1,4 +1,3 @@
-<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport"
@@ -40,11 +39,11 @@
 
   <!-- Site Generator -->
   <meta name="generator" content="Hugo {{ .Site.Hugo.Version }} with theme pure" />
-  <title>
+  {{/* <title>
     {{- block "title" . -}}
     {{ if .IsPage }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}
     {{- end -}}
-  </title>
+  </title> */}}
   <!-- Canonical links -->
 
   {{ range .AlternativeOutputFormats -}}
@@ -74,5 +73,3 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->` | safeHTML }}
-
-</head>
